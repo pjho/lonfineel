@@ -1,78 +1,101 @@
-			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" prefix="og: http://ogp.me/ns#">
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" prefix=
+"og: http://ogp.me/ns#">
 <head profile="http://gmpg.org/xfn/11">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"f9e251f9c4",applicationID:"11977336"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
-
-	<title>
-																				Manaaki Tuna&nbsp;|&nbsp;Tag Archive&nbsp;|&nbsp;tuna	</title>
-	
-	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.longfineel.co.nz/feed/">
-    <link rel="alternate" type="text/xml" title="RSS .92" href="http://www.longfineel.co.nz/feed/rss/">
-    <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://www.longfineel.co.nz/feed/atom/">
-    <link rel="alternate" type="application/rss+xml" title="Manaaki Tuna RSS Comments Feed" href="http://www.longfineel.co.nz/comments/feed/">
-	<link rel="shortcut icon" href="favicon.ico" title="Favicon">
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
-	<link rel="pingback" href="http://www.longfineel.co.nz/xmlrpc.php">
-	<link rel="stylesheet" type="text/css" href="css/ceebox.css"> 
-		
-	<link rel="stylesheet" type="text/css" href="css/jquery.jcarousel.css"> 
-	<link rel="stylesheet" type="text/css" href="css/skin.css"> 
-	<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css"> 
-	
-
-	<link href="css/slim-081711.css" rel="stylesheet" type="text/css">
-	<style type="text/css">
-		#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:200px;}
-		#mc_embed_signup form { padding:0 !important;}
-		#mc_embed_signup form input.email{ margin-right:0; margin-top:5px;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;border-radius:5px;border-color:#41B3E6;}
-		#mc_embed_signup .button { background-color: #5ACBF7; }
-		#mc_embed_signup .button:hover { background-color: #41B3E6; }
-			
-		
-		.home_widgets #mc_embed_signup{width:100%;}
-		.home_widgets #mc_embed_signup .button{	float:right; clear:none; margin-top:10px; }
-		.home_widgets #mc_embed_signup form input.email{float:left; margin-top:10px;}
-		
-		.mtlfclear {display:block;border-bottom:1px solid #e5e5e5;clear:both;padding:0;height:1px;line-height:1px;margin:10px 0 20px;}
-		
-	</style>
-	
-	
-		
+<meta name="generator" content=
+"HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 3673), see www.w3.org" />
+<meta http-equiv="Content-Type" content=
+"text/html; charset=us-ascii" />
+<script type="text/javascript">
+//<![CDATA[
+(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"f9e251f9c4",applicationID:"11977336"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);
+//]]>
+</script>
+<title>Manaaki Tuna&nbsp;|&nbsp;Tag
+Archive&nbsp;|&nbsp;tuna</title>
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0"
+href="http://www.longfineel.co.nz/feed/" />
+<link rel="alternate" type="text/xml" title="RSS .92" href=
+"http://www.longfineel.co.nz/feed/rss/" />
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3"
+href="http://www.longfineel.co.nz/feed/atom/" />
+<link rel="alternate" type="application/rss+xml" title=
+"Manaaki Tuna RSS Comments Feed" href=
+"http://www.longfineel.co.nz/comments/feed/" />
+<link rel="shortcut icon" href="favicon.ico" title="Favicon" />
+<link rel="stylesheet" href="css/style.css" type="text/css" media=
+"screen" />
+<link rel="pingback" href=
+"http://www.longfineel.co.nz/xmlrpc.php" />
+<link rel="stylesheet" type="text/css" href="css/ceebox.css" />
+<link rel="stylesheet" type="text/css" href=
+"css/jquery.jcarousel.css" />
+<link rel="stylesheet" type="text/css" href="css/skin.css" />
+<link rel="stylesheet" type="text/css" href=
+"css/prettyPhoto.css" />
+<link href="css/slim-081711.css" rel="stylesheet" type=
+"text/css" />
+<style type="text/css">
+/*<![CDATA[*/
+                #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:200px;}
+                #mc_embed_signup form { padding:0 !important;}
+                #mc_embed_signup form input.email{ margin-right:0; margin-top:5px;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;border-radius:5px;border-color:#41B3E6;}
+                #mc_embed_signup .button { background-color: #5ACBF7; }
+                #mc_embed_signup .button:hover { background-color: #41B3E6; }
+                        
+                
+                .home_widgets #mc_embed_signup{width:100%;}
+                .home_widgets #mc_embed_signup .button{ float:right; clear:none; margin-top:10px; }
+                .home_widgets #mc_embed_signup form input.email{float:left; margin-top:10px;}
+                
+                .mtlfclear {display:block;border-bottom:1px solid #e5e5e5;clear:both;padding:0;height:1px;line-height:1px;margin:10px 0 20px;}
+                
+/*]]>*/
+</style>
 <!-- This site is optimized with the Yoast SEO plugin v6.0 - https://yoast.com/wordpress/plugins/seo/ -->
-<link rel="canonical" href="http://www.longfineel.co.nz/tag/tuna/">
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="object">
-<meta property="og:title" content="tuna Archives - Manaaki Tuna">
-<meta property="og:url" content="http://www.longfineel.co.nz/tag/tuna/">
-<meta property="og:site_name" content="Manaaki Tuna">
-<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"http:\/\/www.longfineel.co.nz\/","name":"Manaaki Tuna","potentialAction":{"@type":"SearchAction","target":"http:\/\/www.longfineel.co.nz\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
-<!-- / Yoast SEO plugin. -->
-
-<link rel="dns-prefetch" href="//s.w.org">
-<link rel="alternate" type="application/rss+xml" title="Manaaki Tuna &raquo; tuna Tag Feed" href="http://www.longfineel.co.nz/tag/tuna/feed/">
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.longfineel.co.nz\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.14"}};
-			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])?!1:!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55358,56760,9792,65039],[55358,56760,8203,9792,65039])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
-		<style type="text/css">
+<link rel="canonical" href=
+"http://www.longfineel.co.nz/tag/tuna/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="object" />
+<meta property="og:title" content="tuna Archives - Manaaki Tuna" />
+<meta property="og:url" content=
+"http://www.longfineel.co.nz/tag/tuna/" />
+<meta property="og:site_name" content="Manaaki Tuna" />
+<script type="application/ld+json">
+<![CDATA[
+{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"http:\/\/www.longfineel.co.nz\/","name":"Manaaki Tuna","potentialAction":{"@type":"SearchAction","target":"http:\/\/www.longfineel.co.nz\/?s={search_term_string}","query-input":"required name=search_term_string"}}
+]]>
+</script><!-- / Yoast SEO plugin. -->
+<link rel="dns-prefetch" href="//s.w.org" />
+<link rel="alternate" type="application/rss+xml" title=
+"Manaaki Tuna &#187; tuna Tag Feed" href=
+"http://www.longfineel.co.nz/tag/tuna/feed/" />
+<script type="text/javascript">
+//<![CDATA[
+                        window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.longfineel.co.nz\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.14"}};
+                        !function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])?!1:!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55358,56760,9792,65039],[55358,56760,8203,9792,65039])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+//]]>
+</script>
+<style type="text/css">
+/*<![CDATA[*/
 img.wp-smiley,
 img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
 }
+/*]]>*/
 </style>
-	<link rel="stylesheet" id="wp-block-library-css" href="css/style.min.css" type="text/css" media="all">
-<link rel="stylesheet" id="contact-form-7-css" href="css/styles.css" type="text/css" media="all">
-        <script>
+<link rel="stylesheet" id="wp-block-library-css" href=
+"css/style.min.css" type="text/css" media="all" />
+<link rel="stylesheet" id="contact-form-7-css" href=
+"css/styles.css" type="text/css" media="all" />
+<script type="text/javascript">
             /* <![CDATA[ */
             var rcewpp = {
                 "ajax_url":"http://www.longfineel.co.nz/wp-admin/admin-ajax.php",
@@ -82,14 +105,20 @@ img.emoji {
                 "settings_hover_icon": 'http://www.longfineel.co.nz/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings_hover.png'
             };
             /* ]]\> */
-        </script>
-        <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/jquery-migrate.min.js"></script>
-<link rel="https://api.w.org/" href="http://www.longfineel.co.nz/wp-json/">
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.longfineel.co.nz/xmlrpc.php?rsd">
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.longfineel.co.nz/wp-includes/wlwmanifest.xml"> 
-<meta name="generator" content="WordPress 5.1.14">
+</script>
+<script type="text/javascript" src="js/jquery.js">
+</script>
+<script type="text/javascript" src="js/jquery-migrate.min.js">
+</script>
+<link rel="https://api.w.org/" href=
+"http://www.longfineel.co.nz/wp-json/" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href=
+"http://www.longfineel.co.nz/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href=
+"http://www.longfineel.co.nz/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.1.14" />
 <style type="text/css">
+/*<![CDATA[*/
     #category-posts-2-internal .cat-post-item img {max-width: initial; max-height: initial;}
 #category-posts-2-internal .cat-post-current .cat-post-title {text-transform: uppercase;}
 #category-posts-2-internal .cat-post-date {margin-bottom: 10px;}
@@ -99,12 +128,12 @@ img.emoji {
 #category-posts-2-internal .cat-post-item img {margin: initial;}
 #category-posts-2-internal .cat-post-title {font-size: 15px;}
 #category-posts-2-internal .cat-post-current .cat-post-title {font-weight: bold; text-transform: uppercase;}
-#category-posts-2-internal .cat-post-date {font-size: 12px;	line-height: 18px; font-style: italic; margin-bottom: 10px;}
+#category-posts-2-internal .cat-post-date {font-size: 12px;     line-height: 18px; font-style: italic; margin-bottom: 10px;}
 #category-posts-2-internal .cat-post-comment-num {font-size: 12px; line-height: 18px;}
-#category-posts-2-internal .cat-post-item {border-bottom: 1px solid #ccc;	list-style: none; list-style-type: none; margin: 3px 0;	padding: 3px 0;}
+#category-posts-2-internal .cat-post-item {border-bottom: 1px solid #ccc;       list-style: none; list-style-type: none; margin: 3px 0; padding: 3px 0;}
 #category-posts-2-internal .cat-post-item:last-child {border-bottom: none;}
 #category-posts-2-internal .cat-post-thumbnail {float:left;}
-#category-posts-2-internal .cat-post-item:after {content: ""; display: table;	clear: both;}
+#category-posts-2-internal .cat-post-item:after {content: ""; display: table;   clear: both;}
 #category-posts-2-internal .cat-post-thumbnail span {overflow: hidden; display:block}
 #category-posts-2-internal .cat-post-item img {margin: initial;}
 #category-posts-3-internal .cat-post-item img {max-width: initial; max-height: initial;}
@@ -116,232 +145,363 @@ img.emoji {
 #category-posts-3-internal .cat-post-item img {margin: initial;}
 #category-posts-3-internal .cat-post-title {font-size: 15px;}
 #category-posts-3-internal .cat-post-current .cat-post-title {font-weight: bold; text-transform: uppercase;}
-#category-posts-3-internal .cat-post-date {font-size: 12px;	line-height: 18px; font-style: italic; margin-bottom: 10px;}
+#category-posts-3-internal .cat-post-date {font-size: 12px;     line-height: 18px; font-style: italic; margin-bottom: 10px;}
 #category-posts-3-internal .cat-post-comment-num {font-size: 12px; line-height: 18px;}
-#category-posts-3-internal .cat-post-item {border-bottom: 1px solid #ccc;	list-style: none; list-style-type: none; margin: 3px 0;	padding: 3px 0;}
+#category-posts-3-internal .cat-post-item {border-bottom: 1px solid #ccc;       list-style: none; list-style-type: none; margin: 3px 0; padding: 3px 0;}
 #category-posts-3-internal .cat-post-item:last-child {border-bottom: none;}
 #category-posts-3-internal .cat-post-thumbnail {float:left;}
-#category-posts-3-internal .cat-post-item:after {content: ""; display: table;	clear: both;}
+#category-posts-3-internal .cat-post-item:after {content: ""; display: table;   clear: both;}
 #category-posts-3-internal .cat-post-thumbnail span {overflow: hidden; display:block}
 #category-posts-3-internal .cat-post-item img {margin: initial;}
+/*]]>*/
 </style>
-    		<meta property="og:title" content="Manaaki Tuna">
-		<meta property="og:type" content="blog">
-		<meta property="og:url" content="http://www.longfineel.co.nz">
-		<meta property="og:image" content="images/facebook.png">
-		<meta property="og:site_name" content="Manaaki Tuna">
-		<script type="text/javascript">
+<meta property="og:title" content="Manaaki Tuna" />
+<meta property="og:type" content="blog" />
+<meta property="og:url" content="http://www.longfineel.co.nz" />
+<meta property="og:image" content="images/facebook.png" />
+<meta property="og:site_name" content="Manaaki Tuna" />
+<script type="text/javascript">
+//<![CDATA[
 (function(url){
-	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
-	var addEvent = function(evt, handler) {
-		if (window.addEventListener) {
-			document.addEventListener(evt, handler, false);
-		} else if (window.attachEvent) {
-			document.attachEvent('on' + evt, handler);
-		}
-	};
-	var removeEvent = function(evt, handler) {
-		if (window.removeEventListener) {
-			document.removeEventListener(evt, handler, false);
-		} else if (window.detachEvent) {
-			document.detachEvent('on' + evt, handler);
-		}
-	};
-	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
-	var logHuman = function() {
-		var wfscr = document.createElement('script');
-		wfscr.type = 'text/javascript';
-		wfscr.async = true;
-		wfscr.src = url + '&r=' + Math.random();
-		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
-		for (var i = 0; i < evts.length; i++) {
-			removeEvent(evts[i], logHuman);
-		}
-	};
-	for (var i = 0; i < evts.length; i++) {
-		addEvent(evts[i], logHuman);
-	}
+        if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+        var addEvent = function(evt, handler) {
+                if (window.addEventListener) {
+                        document.addEventListener(evt, handler, false);
+                } else if (window.attachEvent) {
+                        document.attachEvent('on' + evt, handler);
+                }
+        };
+        var removeEvent = function(evt, handler) {
+                if (window.removeEventListener) {
+                        document.removeEventListener(evt, handler, false);
+                } else if (window.detachEvent) {
+                        document.detachEvent('on' + evt, handler);
+                }
+        };
+        var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+        var logHuman = function() {
+                var wfscr = document.createElement('script');
+                wfscr.type = 'text/javascript';
+                wfscr.async = true;
+                wfscr.src = url + '&r=' + Math.random();
+                (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+                for (var i = 0; i < evts.length; i++) {
+                        removeEvent(evts[i], logHuman);
+                }
+        };
+        for (var i = 0; i < evts.length; i++) {
+                addEvent(evts[i], logHuman);
+        }
 })('//www.longfineel.co.nz/?wordfence_lh=1&hid=388C5C96FDA9089A7F40737C1F958F8B');
+//]]>
 </script><!-- <meta name="NextGEN" version="2.2.33" /> -->
-	
-	<!--[if IE 6]>
-		<script src="http://www.longfineel.co.nz/wp-content/themes/simplefolio/js/DD_belatedPNG.js"></script>
-		<script>
-		  /* EXAMPLE */
-		  DD_belatedPNG.fix('*');
-		</script>
-		<link rel="stylesheet" media="screen" href="ie6.css"/>
+<!--[if IE 6]>
+                <script src="http://www.longfineel.co.nz/wp-content/themes/simplefolio/js/DD_belatedPNG.js"></script>
+                <script>
+                  /* EXAMPLE */
+                  DD_belatedPNG.fix('*');
+                </script>
+                <link rel="stylesheet" media="screen" href="ie6.css"/>
     <![endif]-->
-	<script type="text/javascript" src="js/cufon-yui.js"></script>
-	<script type="text/javascript" src="js/Museo_400.font.js"></script>
-	<script type="text/javascript" src="js/DD_roundies.js"></script>
-	
-	<script type="text/javascript" src="js/hoverIntent.js"></script>
-	<script type="text/javascript" src="js/superfish.js"></script>
-	<script type="text/javascript" src="js/custom.js"></script>
-	<script type="text/javascript" src="js/jquery.ceebox-min.js"></script>
-	<script type="text/javascript" src="js/jquery.jcarousel.pack.js"></script> 
-	<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script> 
-		
-		<script type="text/javascript"> 
-		 
-		function mycarousel_initCallback(carousel)
-		{
-			// Disable autoscrolling if the user clicks the prev or next button.
-			carousel.buttonNext.bind('click', function() {
-				carousel.startAuto(0);
-			});
-		 
-			carousel.buttonPrev.bind('click', function() {
-				carousel.startAuto(0);
-			});
-		 
-			// Pause autoscrolling if the user moves with the cursor over the clip.
-			carousel.clip.hover(function() {
-				carousel.stopAuto();
-			}, function() {
-				carousel.startAuto();
-			});
-		};
-		 
-		jQuery(document).ready(function() {
-			 jQuery("#petitionbanner,.ceebox").ceebox();
-			jQuery('#mycarousel').jcarousel({
-				auto: 5,
-				wrap: 'last',
-				initCallback: mycarousel_initCallback
-			});		
-			jQuery("a[rel^='prettyPhoto']").prettyPhoto();			
-		});
-	
-		 
-		</script> 
 
-	
+<script type="text/javascript" src="js/cufon-yui.js">
+</script>
+<script type="text/javascript" src="js/Museo_400.font.js">
+</script>
+<script type="text/javascript" src="js/DD_roundies.js">
+</script>
+<script type="text/javascript" src="js/hoverIntent.js">
+</script>
+<script type="text/javascript" src="js/superfish.js">
+</script>
+<script type="text/javascript" src="js/custom.js">
+</script>
+<script type="text/javascript" src="js/jquery.ceebox-min.js">
+</script>
+<script type="text/javascript" src="js/jquery.jcarousel.pack.js">
+</script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js">
+</script>
+<script type="text/javascript">
+//<![CDATA[
+ 
+                 
+                function mycarousel_initCallback(carousel)
+                {
+                        // Disable autoscrolling if the user clicks the prev or next button.
+                        carousel.buttonNext.bind('click', function() {
+                                carousel.startAuto(0);
+                        });
+                 
+                        carousel.buttonPrev.bind('click', function() {
+                                carousel.startAuto(0);
+                        });
+                 
+                        // Pause autoscrolling if the user moves with the cursor over the clip.
+                        carousel.clip.hover(function() {
+                                carousel.stopAuto();
+                        }, function() {
+                                carousel.startAuto();
+                        });
+                };
+                 
+                jQuery(document).ready(function() {
+                         jQuery("#petitionbanner,.ceebox").ceebox();
+                        jQuery('#mycarousel').jcarousel({
+                                auto: 5,
+                                wrap: 'last',
+                                initCallback: mycarousel_initCallback
+                        });             
+                        jQuery("a[rel^='prettyPhoto']").prettyPhoto();                  
+                });
+        
+                 
+//]]>
+</script>
 </head>
-<body class="class="archive tag tag-tuna tag-27"">
-
-
+<body class="class=" archive="" tag="" tag-tuna="">
 <!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PNWCPD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<noscript><iframe src=
+"//www.googletagmanager.com/ns.html?id=GTM-PNWCPD" height="0"
+width="0" style=
+"display:none;visibility:hidden"></iframe></noscript><script type=
+"text/javascript">
+//<![CDATA[
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PNWCPD');</script>
-<!-- End Google Tag Manager -->
-
-
-
-		<div id="contactnav">
-			<ul>
-				<li><a href="contact.html">Contact</a></li>
-				<li><a href="feed">RSS <img src="images/rss.png" alt="rss"></a></li>
-			</ul>
-		</div>
-	<div id="wrapper">
-		<div id="header"> 
-				<img src="images/logo.gif" id="logoimagecoziesux" alt="Manaaki Tuna - Lifeline for Longfins">
-				<!--<a id='petitionbanner' class='ceebox' title='Sign our petition - hosted by Forest and Bird. Click the cross at top-right to return to Manaaki Tuna. Thanks for signing our petition.' href='http://www.forestandbird.org.nz/saving-our-environment/freshwater-/lifeline-longfins#pledge-user-form'><img src='http://www.longfineel.co.nz/wp-content/themes/simplefolio/images/petition.gif' alt='Sign our Petition' /></a>-->
-			
-					<h1>Manaaki Tuna <span>lifeline for longfins</span></h1>
-						<h2>Protecting and restoring our endangered and iconic longfin eel</h2>
-			
-					<div id="pagenav" class="menu-primary-container"><ul id="nav" class="sf-menu"><li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-56"><a href="index.html">Home</a></li>
-<li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-58"><a href="about.html">About us</a>
+})(window,document,'script','dataLayer','GTM-PNWCPD');
+//]]>
+</script><!-- End Google Tag Manager -->
+<div id="contactnav">
+<ul>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="feed">RSS <img src="images/rss.png" alt=
+"rss" /></a></li>
+</ul>
+</div>
+<div id="wrapper">
+<div id="header"><img src="images/logo.gif" id="logoimagecoziesux"
+alt="Manaaki Tuna - Lifeline for Longfins" />
+<!--<a id='petitionbanner' class='ceebox' title='Sign our petition - hosted by Forest and Bird. Click the cross at top-right to return to Manaaki Tuna. Thanks for signing our petition.' href='http://www.forestandbird.org.nz/saving-our-environment/freshwater-/lifeline-longfins#pledge-user-form'><img src='http://www.longfineel.co.nz/wp-content/themes/simplefolio/images/petition.gif' alt='Sign our Petition' /></a>-->
+<h1>Manaaki Tuna <span>lifeline for longfins</span></h1>
+<h2>Protecting and restoring our endangered and iconic longfin
+eel</h2>
+<div id="pagenav" class="menu-primary-container">
+<ul id="nav" class="sf-menu">
+<li id="menu-item-56" class=
+"menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-56">
+<a href="index.html">Home</a></li>
+<li id="menu-item-58" class=
+"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-58">
+<a href="about.html">About us</a>
 <ul class="sub-menu">
-	<li id="menu-item-55" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55"><a href="test.html">Affiliates</a></li>
-	<li id="menu-item-97" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-97"><a href="contact.html">Contact</a></li>
+<li id="menu-item-55" class=
+"menu-item menu-item-type-post_type menu-item-object-page menu-item-55">
+<a href="test.html">Affiliates</a></li>
+<li id="menu-item-97" class=
+"menu-item menu-item-type-post_type menu-item-object-page menu-item-97">
+<a href="contact.html">Contact</a></li>
 </ul>
 </li>
-<li id="menu-item-54" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-54"><a href="longfin-tuna.html">Longfin Tuna</a>
+<li id="menu-item-54" class=
+"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-54">
+<a href="longfin-tuna.html">Longfin Tuna</a>
 <ul class="sub-menu">
-	<li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a href="importance-of-tuna-to-maori.html">Importance of Tuna to Maori</a></li>
+<li id="menu-item-75" class=
+"menu-item menu-item-type-post_type menu-item-object-page menu-item-75">
+<a href="importance-of-tuna-to-maori.html">Importance of Tuna to
+Maori</a></li>
 </ul>
 </li>
-<li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="extinction-crisis.html">Extinction Crisis</a></li>
-<li id="menu-item-52" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a href="conservation.html">Conservation</a></li>
-<li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-57"><a href="tuna-news.html">Tuna News</a></li>
-<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-51"><a href="research.html">Education</a>
+<li id="menu-item-53" class=
+"menu-item menu-item-type-post_type menu-item-object-page menu-item-53">
+<a href="extinction-crisis.html">Extinction Crisis</a></li>
+<li id="menu-item-52" class=
+"menu-item menu-item-type-post_type menu-item-object-page menu-item-52">
+<a href="conservation.html">Conservation</a></li>
+<li id="menu-item-57" class=
+"menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-57">
+<a href="tuna-news.html">Tuna News</a></li>
+<li id="menu-item-51" class=
+"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-51">
+<a href="research.html">Education</a>
 <ul class="sub-menu">
-	<li id="menu-item-123" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-123"><a href="references.html">References</a></li>
+<li id="menu-item-123" class=
+"menu-item menu-item-type-post_type menu-item-object-page menu-item-123">
+<a href="references.html">References</a></li>
 </ul>
 </li>
-</ul></div>					
-		</div> 
-		
-
-		<div id="main">
-			<div class="container">
-
-				<div class="content">
-					
-													
-					<div class="blogpost">
-						<div class="comments"><a href="velvet-and-elvis.html#comments">3</a></div>
-						<h2 class="title"><a href="velvet-and-elvis.html" rel="bookmark" title="Permanent Link to Velvet and Elvis by Stephanie Bowman">Velvet and Elvis by Stephanie Bowman</a></h2>
-						<div class="meta">Posted July 14th, 2010 in <a href="tuna-news_1.html" rel="category tag">Tuna News</a> by Pat</div>
-						<div class="entry">
-							<img width="150" height="150" src="images/02-150x150.jpg" class="attachment-150x150 size-150x150 wp-post-image" alt srcset="images/02-150x150.jpg 150w, images/02-300x300.jpg 300w, images/02-50x50.jpg 50w, images/02-25x25.jpg 25w, images/02.jpg 552w" sizes="(max-width: 150px) 100vw, 150px">							<p>American Artist and eel campaigner Stephanie Bowman is touring New Zealand to raise awareness regarding the longfin eel’s biological and cultural significance in order to save it from extinction. Stephanie is working with groups in New Zealand and beyond to create a looooooooooong eel appliqué tapestry that will be displayed in public spaces throughout New [&hellip;]</p>
-						</div>
-					</div>
-					
-									
-										<div class="navigation">
-						<div class="alignleft"></div>
-						<div class="alignright"></div>
-					</div>
-										
-								
-				</div>
-				
-				<div class="sidebar">
-		<div class="widget widget_text"><h3>Join our mailing list</h3>			<div class="textwidget"><div id="mc_embed_signup">
-<form action="https://longfineel.us5.list-manage.com/subscribe/post?u=db35a0dbd453a74f0f85a5ee9&amp;id=031a2c7038" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-	<input type="email" value name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required style="width:100%">
-	<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</ul>
+</div>
+</div>
+<div id="main">
+<div class="container">
+<div class="content">
+<div class="blogpost">
+<div class="comments"><a href=
+"velvet-and-elvis.html#comments">3</a></div>
+<h2 class="title"><a href="velvet-and-elvis.html" rel="bookmark"
+title=
+"Permanent Link to Velvet and Elvis by Stephanie Bowman">Velvet and
+Elvis by Stephanie Bowman</a></h2>
+<div class="meta">Posted July 14th, 2010 in <a href=
+"tuna-news_1.html" rel="category tag">Tuna News</a> by Pat</div>
+<div class="entry"><img width="150" height="150" src=
+"images/02-150x150.jpg" class=
+"attachment-150x150 size-150x150 wp-post-image" alt="" srcset=
+"images/02-150x150.jpg 150w, images/02-300x300.jpg 300w, images/02-50x50.jpg 50w, images/02-25x25.jpg 25w, images/02.jpg 552w"
+sizes="(max-width: 150px) 100vw, 150px" />
+<p>American Artist and eel campaigner Stephanie Bowman is touring
+New Zealand to raise awareness regarding the longfin
+eel&#226;&#8364;&#8482;s biological and cultural significance in
+order to save it from extinction. Stephanie is working with groups
+in New Zealand and beyond to create a looooooooooong eel
+appliqu&#195;&#169; tapestry that will be displayed in public
+spaces throughout New [&#8230;]</p>
+</div>
+</div>
+<div class="navigation">
+<div class="alignleft"></div>
+<div class="alignright"></div>
+</div>
+</div>
+<div class="sidebar">
+<div class="widget widget_text">
+<h3>Join our mailing list</h3>
+<div class="textwidget">
+<div id="mc_embed_signup">
+<form action=
+"https://longfineel.us5.list-manage.com/subscribe/post?u=db35a0dbd453a74f0f85a5ee9&amp;id=031a2c7038"
+method="post" id="mc-embedded-subscribe-form" name=
+"mc-embedded-subscribe-form" class="validate" target="_blank">
+<input type="email" value="" name="EMAIL" class="email" id=
+"mce-EMAIL" placeholder="email address" required="" style=
+"width:100%" />
+<div class="clear"><input type="submit" value="Subscribe" name=
+"subscribe" id="mc-embedded-subscribe" class="button" /></div>
 </form>
 </div>
 </div>
-		</div><div class="widget widget_text"><h3>Find us on Facebook</h3>			<div class="textwidget"><iframe src="https://www.facebook.com/plugins/like.php?app_id=230296136990526&amp;href=http%3A%2F%2Fwww.longfineel.co.nz%2F&amp;send=false&amp;layout=standard&amp;width=220&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:80px;" allowTransparency="true"></iframe></div>
-		</div><div class="widget cat-post-widget"><h3>Tuna News</h3><ul id="category-posts-2-internal" class="category-posts-internal">
-<li class="cat-post-item"><a class="post-title cat-post-title" href="manaaki-tuna-petition-update.html" rel="bookmark">Manaaki Tuna Petition Update</a> <a class="cat-post-thumbnail" href="manaaki-tuna-petition-update.html" title="Manaaki Tuna Petition Update"><span><img width="50" height="50" src="images/eel_hiding-50x50.jpg" class="attachment-50x50 size-50x50 wp-post-image" alt srcset="images/eel_hiding-50x50.jpg 50w, images/eel_hiding-150x150.jpg 150w, images/eel_hiding-300x300.jpg 300w, images/eel_hiding-25x25.jpg 25w, images/eel_hiding.jpg 360w" sizes="(max-width: 50px) 100vw, 50px"></span></a></li><li class="cat-post-item"><a class="post-title cat-post-title" href="the-travelling-tuna-tapestry-is-going-to-the-beehive.html" rel="bookmark">The Travelling Tuna Tapestry is going to the Beehive</a> <a class="cat-post-thumbnail" href="the-travelling-tuna-tapestry-is-going-to-the-beehive.html" title="The Travelling Tuna Tapestry is going to the Beehive"><span><img width="50" height="50" src="images/advertisement-for-the-march1-50x50.jpg" class="attachment-50x50 size-50x50 wp-post-image" alt srcset="images/advertisement-for-the-march1-50x50.jpg 50w, images/advertisement-for-the-march1-150x150.jpg 150w, images/advertisement-for-the-march1-25x25.jpg 25w" sizes="(max-width: 50px) 100vw, 50px"></span></a></li><li class="cat-post-item"><a class="post-title cat-post-title" href="save-me.html" rel="bookmark">Save Me!</a> <a class="cat-post-thumbnail" href="save-me.html" title="Save Me!"><span><img width="50" height="50" src="images/signing-the-eel-50x50.png" class="attachment-50x50 size-50x50 wp-post-image" alt="Students signing the banner" srcset="images/signing-the-eel-50x50.png 50w, images/signing-the-eel-150x150.png 150w, images/signing-the-eel-25x25.png 25w" sizes="(max-width: 50px) 100vw, 50px"></span></a></li></ul>
-</div><div class="widget widget_tag_cloud"><h3>Tags</h3><div class="tagcloud"><a href="education.html" class="tag-cloud-link tag-link-34 tag-link-position-1" style="font-size: 8pt;" aria-label="education (1 item)">education</a>
-<a href="eel.html" class="tag-cloud-link tag-link-28 tag-link-position-2" style="font-size: 8pt;" aria-label="eel (1 item)">eel</a>
-<a href="journal.html" class="tag-cloud-link tag-link-33 tag-link-position-3" style="font-size: 8pt;" aria-label="journal (1 item)">journal</a>
-<a href="story.html" class="tag-cloud-link tag-link-29 tag-link-position-4" style="font-size: 22pt;" aria-label="story (2 items)">story</a>
-<a href="tuna.html" class="tag-cloud-link tag-link-27 tag-link-position-5" style="font-size: 8pt;" aria-label="tuna (1 item)">tuna</a></div>
-</div><div class="widget widget_search">	<form method="get" id="sidebarsearch" action="http://www.longfineel.co.nz">
-		<div>
-			<input type="text" value name="s" id="keyword">
-			<input type="submit" name="submit" id="searchsubmit" value="Search"> 
-		</div>
-	</form>
-</div>	</div>
-
-						</div>
-		<div class="footernav"><ul id="menu-footer" class><li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-83"><a href="index.html">Home</a></li>
-<li id="menu-item-85" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-85"><a href="about.html">About us</a></li>
-<li id="menu-item-82" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-82"><a href="longfin-tuna.html">Longfin Tuna</a></li>
-<li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="extinction-crisis.html">Extinction Crisis</a></li>
-<li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="conservation.html">Conservation</a></li>
-<li id="menu-item-79" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-79"><a href="research.html">Education</a></li>
-<li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-84"><a href="tuna-news.html">Tuna News</a></li>
-<li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="contact.html">Contact</a></li>
-<li id="menu-item-87" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-87"><a href="references.html">References</a></li>
-<li id="menu-item-86" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-86"><a href="sitemap_index.xml">Sitemap</a></li>
-</ul></div>		</div>
-		
-	</div>
-	<div id="footer">
-		<div class="copyright" style="text-align:left;float:left">
-				&copy; 2022 Manaaki Tuna. All rights reserved. 
-		</div>
-		<div style="text-align:right;float:right;margin-right:5px;">site by <a href="http://www.ekology.co.nz" title="Website Design and Development">ekology</a></div>
-	</div>
-	<script type="text/javascript"> Cufon.now(); </script>
-	
-	<!-- ngg_resource_manager_marker -->        <script>
+</div>
+<div class="widget widget_text">
+<h3>Find us on Facebook</h3>
+<div class="textwidget"><iframe src=
+"https://www.facebook.com/plugins/like.php?app_id=230296136990526&amp;href=http%3A%2F%2Fwww.longfineel.co.nz%2F&amp;send=false&amp;layout=standard&amp;width=220&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=80"
+scrolling="no" frameborder="0" style=
+"border:none; overflow:hidden; width:100%; height:80px;"
+allowtransparency="true"></iframe></div>
+</div>
+<div class="widget cat-post-widget">
+<h3>Tuna News</h3>
+<ul id="category-posts-2-internal" class="category-posts-internal">
+<li class="cat-post-item"><a class="post-title cat-post-title"
+href="manaaki-tuna-petition-update.html" rel="bookmark">Manaaki
+Tuna Petition Update</a> <a class="cat-post-thumbnail" href=
+"manaaki-tuna-petition-update.html" title=
+"Manaaki Tuna Petition Update"><span><img width="50" height="50"
+src="images/eel_hiding-50x50.jpg" class=
+"attachment-50x50 size-50x50 wp-post-image" alt="" srcset=
+"images/eel_hiding-50x50.jpg 50w, images/eel_hiding-150x150.jpg 150w, images/eel_hiding-300x300.jpg 300w, images/eel_hiding-25x25.jpg 25w, images/eel_hiding.jpg 360w"
+sizes="(max-width: 50px) 100vw, 50px" /></span></a></li>
+<li class="cat-post-item"><a class="post-title cat-post-title"
+href="the-travelling-tuna-tapestry-is-going-to-the-beehive.html"
+rel="bookmark">The Travelling Tuna Tapestry is going to the
+Beehive</a> <a class="cat-post-thumbnail" href=
+"the-travelling-tuna-tapestry-is-going-to-the-beehive.html" title=
+"The Travelling Tuna Tapestry is going to the Beehive"><span><img width="50"
+height="50" src="images/advertisement-for-the-march1-50x50.jpg"
+class="attachment-50x50 size-50x50 wp-post-image" alt="" srcset=
+"images/advertisement-for-the-march1-50x50.jpg 50w, images/advertisement-for-the-march1-150x150.jpg 150w, images/advertisement-for-the-march1-25x25.jpg 25w"
+sizes="(max-width: 50px) 100vw, 50px" /></span></a></li>
+<li class="cat-post-item"><a class="post-title cat-post-title"
+href="save-me.html" rel="bookmark">Save Me!</a> <a class=
+"cat-post-thumbnail" href="save-me.html" title=
+"Save Me!"><span><img width="50" height="50" src=
+"images/signing-the-eel-50x50.png" class=
+"attachment-50x50 size-50x50 wp-post-image" alt=
+"Students signing the banner" srcset=
+"images/signing-the-eel-50x50.png 50w, images/signing-the-eel-150x150.png 150w, images/signing-the-eel-25x25.png 25w"
+sizes="(max-width: 50px) 100vw, 50px" /></span></a></li>
+</ul>
+</div>
+<div class="widget widget_tag_cloud">
+<h3>Tags</h3>
+<div class="tagcloud"><a href="education.html" class=
+"tag-cloud-link tag-link-34 tag-link-position-1" style=
+"font-size: 8pt;" aria-label="education (1 item)">education</a>
+<a href="eel.html" class=
+"tag-cloud-link tag-link-28 tag-link-position-2" style=
+"font-size: 8pt;" aria-label="eel (1 item)">eel</a> <a href=
+"journal.html" class=
+"tag-cloud-link tag-link-33 tag-link-position-3" style=
+"font-size: 8pt;" aria-label="journal (1 item)">journal</a>
+<a href="story.html" class=
+"tag-cloud-link tag-link-29 tag-link-position-4" style=
+"font-size: 22pt;" aria-label="story (2 items)">story</a> <a href=
+"tuna.html" class="tag-cloud-link tag-link-27 tag-link-position-5"
+style="font-size: 8pt;" aria-label="tuna (1 item)">tuna</a></div>
+</div>
+<div class="widget widget_search">
+<form method="get" id="sidebarsearch" action=
+"http://www.longfineel.co.nz">
+<div><input type="text" value="" name="s" id=
+"keyword" /><input type="submit" name="submit" id="searchsubmit"
+value="Search" /></div>
+</form>
+</div>
+</div>
+</div>
+<div class="footernav">
+<ul id="menu-footer" class="">
+<li id="menu-item-83" class=
+"menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-83">
+<a href="index.html">Home</a></li>
+<li id="menu-item-85" class=
+"menu-item menu-item-type-post_type menu-item-object-page menu-item-85">
+<a href="about.html">About us</a></li>
+<li id="menu-item-82" class=
+"menu-item menu-item-type-post_type menu-item-object-page menu-item-82">
+<a href="longfin-tuna.html">Longfin Tuna</a></li>
+<li id="menu-item-81" class=
+"menu-item menu-item-type-post_type menu-item-object-page menu-item-81">
+<a href="extinction-crisis.html">Extinction Crisis</a></li>
+<li id="menu-item-80" class=
+"menu-item menu-item-type-post_type menu-item-object-page menu-item-80">
+<a href="conservation.html">Conservation</a></li>
+<li id="menu-item-79" class=
+"menu-item menu-item-type-post_type menu-item-object-page menu-item-79">
+<a href="research.html">Education</a></li>
+<li id="menu-item-84" class=
+"menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-84">
+<a href="tuna-news.html">Tuna News</a></li>
+<li id="menu-item-77" class=
+"menu-item menu-item-type-post_type menu-item-object-page menu-item-77">
+<a href="contact.html">Contact</a></li>
+<li id="menu-item-87" class=
+"menu-item menu-item-type-post_type menu-item-object-page menu-item-87">
+<a href="references.html">References</a></li>
+<li id="menu-item-86" class=
+"menu-item menu-item-type-custom menu-item-object-custom menu-item-86">
+<a href="sitemap_index.xml">Sitemap</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="footer">
+<div class="copyright" style="text-align:left;float:left">&#169;
+2022 Manaaki Tuna. All rights reserved.</div>
+<div style="text-align:right;float:right;margin-right:5px;">site by
+<a href="http://www.ekology.co.nz" title=
+"Website Design and Development">ekology</a></div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+ Cufon.now(); 
+//]]>
+</script><!-- ngg_resource_manager_marker --><script type=
+"text/javascript">
             /* <![CDATA[ */
             var rcewpp = {
                 "ajax_url":"http://www.longfineel.co.nz/wp-admin/admin-ajax.php",
@@ -351,45 +511,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "settings_hover_icon": 'http://www.longfineel.co.nz/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings_hover.png'
             };
             /* ]]\> */
-        </script>
-        <script type="text/javascript">
+</script><script type="text/javascript">
 /* <![CDATA[ */
 var wpcf7 = {"apiSettings":{"root":"http:\/\/www.longfineel.co.nz\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}},"cached":"1"};
 /* ]]> */
+</script><script type="text/javascript" src="js/scripts.js">
+</script><script type="text/javascript" src="js/wp-embed.min.js">
 </script>
-<script type="text/javascript" src="js/scripts.js"></script>
-<script type="text/javascript" src="js/wp-embed.min.js"></script>
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s); js.id = id;
-	js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=165570960176857";
-	fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
-		
-	
-	
-	<script>
-		jQuery('.jcarousel-skin-tango img').click( function(){
-			dataLayer.push({			
-				'event' : 'lightbox',
-				'eventCategory' : 'launchLightbox', 
-				'eventAction' : 'click',
-				'eventLabel': jQuery(this).attr('src')
-			});
-			console.log(dataLayer);
-		});
-	</script>
-	
-	
-	
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f9e251f9c4","applicationID":"11977336","transactionName":"MVxQMENYCkQAVRZaWwgWcwdFUAtZTl8MV1Ee","queueTime":0,"applicationTime":3329,"atts":"HRtTRgtCGUo=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
-</html>
-
-<!--
+<div id="fb-root"></div>
+<script type="text/javascript">
+//<![CDATA[
+(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=165570960176857";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+                jQuery('.jcarousel-skin-tango img').click( function(){
+                        dataLayer.push({                        
+                                'event' : 'lightbox',
+                                'eventCategory' : 'launchLightbox', 
+                                'eventAction' : 'click',
+                                'eventLabel': jQuery(this).attr('src')
+                        });
+                        console.log(dataLayer);
+                });
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f9e251f9c4","applicationID":"11977336","transactionName":"MVxQMENYCkQAVRZaWwgWcwdFUAtZTl8MV1Ee","queueTime":0,"applicationTime":3329,"atts":"HRtTRgtCGUo=","errorBeacon":"bam.nr-data.net","agent":""}
+//]]>
+</script><!--
 Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
 
 
 Served from: www.longfineel.co.nz @ 2022-10-02 08:11:53 by W3 Total Cache
 -->
+</body>
+</html>

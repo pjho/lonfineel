@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" prefix="og: http://ogp.me/ns#" xml:lang="en-US">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+
+
+<link rel="shortcut icon" href="/favicon.ico" title="Favicon" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/css/ceebox.css" />
+<link rel="stylesheet" type="text/css" href="/css/jquery.jcarousel.css" />
+<link rel="stylesheet" type="text/css" href="/css/skin.css" />
+<link rel="stylesheet" type="text/css" href="/css/prettyPhoto.css" />
+<link href="/css/slim-081711.css" rel="stylesheet" type="text/css" />
+
+
+{% seo %}
+
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="/js/cufon-yui.js"> </script>
+<script type="text/javascript" src="/js/Museo_400.font.js"> </script>
+<script type="text/javascript" src="/js/DD_roundies.js"> </script>
+<script type="text/javascript" src="/js/hoverIntent.js"> </script>
+<script type="text/javascript" src="/js/superfish.js"> </script>
+<script type="text/javascript" src="/js/custom.js"> </script>
+<script type="text/javascript" src="/js/jquery.ceebox-min.js"> </script>
+<script type="text/javascript" src="/js/jquery.jcarousel.pack.js"> </script>
+<script type="text/javascript" src="/js/jquery.prettyPhoto.js"> </script>
+<script type="text/javascript">
+
+function mycarousel_initCallback(carousel) {
+  // Disable autoscrolling if the user clicks the prev or next button.
+  carousel.buttonNext.bind('click', function() {
+    carousel.startAuto(0);
+  });
+  carousel.buttonPrev.bind('click', function() {
+    carousel.startAuto(0);
+  });
+  // Pause autoscrolling if the user moves with the cursor over the clip.
+  carousel.clip.hover(function() {
+    carousel.stopAuto();
+  }, function() {
+    carousel.startAuto();
+  });
+};
+
+jQuery(document).ready(function() {
+  jQuery("#petitionbanner,.ceebox").ceebox();
+  jQuery('#mycarousel').jcarousel({
+    auto: 5,
+    wrap: 'last',
+    initCallback: mycarousel_initCallback
+  });
+  jQuery("a[rel^='prettyPhoto']").prettyPhoto();
+});
+</script>
+
+</head>
+
+<body>
+  <!-- Google Tag Manager -->
+  <noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-PNWCPD" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  
+  <script type="text/javascript">
+  (function(w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({
+      'gtm.start': new Date().getTime(),
+      event: 'gtm.js'
+    });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-PNWCPD');
+  </script>
+  <!-- End Google Tag Manager -->

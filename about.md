@@ -32,5 +32,5 @@ permalink: /about/
 	<ol>
 		<li>See a copy of the brief online &ndash; <a href="http://www.taiaoraukawa.co.nz/documents/Manaaki%20Tuna.doc">http://www.taiaoraukawa.co.nz/documents/Manaaki%20Tuna.doc</a></li>
 	</ol>
-	<p><a href="references.html">Extended Reference List</a></p>
+	<p><a href="references.html">Extended Reference List.</a></p>
 </div>
